@@ -210,10 +210,26 @@
 
 // maximum sum
 
-// let arr = [2,1,5,1,3,2];
-// let k = 3;
-// let map = {};
-// let maxSum = 0;
-// let l = 0;
+let arr = [2,1,5,1,3,2];
+let k = 3;
+let currSum = 0;
+let n = arr.length;
+
+for (let i = 0; i < k; i++) {
+    let val = arr[i];
+    currSum+=val;   
+}
+
+let max = currSum;
+
+for (let i = 1; i <= n-k; i++) {
+    currSum = currSum-arr[i-1]+arr[i+k-1];
+    if (currSum>max) {
+        max=currSum
+    }
+}
+console.log(max);
+
+
 
 
